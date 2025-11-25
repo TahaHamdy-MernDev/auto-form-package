@@ -1,0 +1,45 @@
+# Build files
+/dist
+
+# Development files
+/src
+/public
+.vscode
+
+# Test files
+__tests__
+*.test.*
+*.spec.*
+
+# Config files
+eslint.config.js
+*.config.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Build analysis
+bundle-analyzer-report.html
+
+# Local development
+.turbo
+.next
+node_modules

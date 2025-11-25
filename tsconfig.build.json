@@ -1,0 +1,21 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "noEmit": false,
+        "sourceMap": true,
+        "declarationMap": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "**/*.stories.*",
+        "**/*.test.*",
+        "**/*.spec.*",
+        "**/__tests__/**",
+        "src/components/tiptap-ui/color-highlight-button/use-color-highlight.ts"
+    ]
+}
