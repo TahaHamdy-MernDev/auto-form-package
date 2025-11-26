@@ -1,6 +1,6 @@
 {
   "name": "@taha-ui-dev/auto-form",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "AutoForm — dynamic form builder with React Hook Form, Zod and built-in shadcn-style UI",
   "type": "module",
   "main": "dist/auto-form.cjs.js",
