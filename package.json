@@ -14,7 +14,7 @@
     "dev": "vite",
     "clean": "rm -rf dist",
     "build:types": "tsc -p tsconfig.build.json",
-    "build": "npm run clean && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",

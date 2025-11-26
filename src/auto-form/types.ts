@@ -236,6 +236,17 @@ export interface AutoFormProps<T extends z.ZodObject<any>> {
   onSubmit: (values: z.infer<T>) => Promise<void> | void;
   className?: string;
   form_id?: string;
+  buttons?: {
+    className?: string;
+    submit?: {
+      text?: string;
+      className?: string;
+    };
+    reset?: {
+      text?: string;
+      className?: string;
+    };
+  };
 }
 
 export type FormFieldProps = {

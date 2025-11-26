@@ -19,6 +19,7 @@ export function AutoForm<T extends z.ZodObject<any>>({
   onSubmit,
   form_id,
   className,
+  buttons,
 }: AutoFormProps<T>) {
   const form = useForm<z.infer<T>>({
     mode: "onSubmit",
@@ -85,18 +86,20 @@ export function AutoForm<T extends z.ZodObject<any>>({
               </div>
             );
           })}
-
-        <div className="flex flex-col gap-2 pt-4 col-span-full">
+        <div className={cn("w-full", buttons?.className)}>
           <Button
             type="button"
             variant="outline"
-            className="w-full"
+            className={cn("w-full", buttons?.reset?.className)}
             onClick={() => form.reset()}
           >
-            {"Reset"}
+            {buttons?.reset?.text || "Reset"}
           </Button>
-          <Button type="submit" className="w-full">
-            {"Submit"}
+          <Button
+            type="submit"
+            className={cn("w-full", buttons?.submit?.className)}
+          >
+            {buttons?.submit?.text || "Submit"}
           </Button>
         </div>
       </form>
