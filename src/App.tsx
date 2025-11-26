@@ -24,7 +24,7 @@ const schema = z.object({
   file: z.instanceof(File).optional(),
   files: z.array(z.instanceof(File)).max(10).optional(),
   select: z.string().optional(),
-  checkbox: z.string().optional(),
+  checkbox: z.boolean().optional(),
   multi_select: z.array(z.string()).optional(),
   textarea: z.string().optional(),
   radio: z.string().optional(),
@@ -142,13 +142,14 @@ const fields: FieldConfig[] = [
     name: "rich_text",
     label: "rich_text",
     field_type: "rich_text",
-    className:"col-span-2"
+    className: "col-span-2",
   },
 ];
 function App() {
   const defaults = generateDefaultsFromZod(schema, {
     file: undefined,
     files: undefined,
+    checkbox: false,
   });
   console.log("defaults", defaults);
 

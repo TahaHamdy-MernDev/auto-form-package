@@ -3,6 +3,7 @@ import type { FormFieldProps, TextareaFieldConfig } from "@/auto-form/types";
 import { FieldError } from "@/components/ui/field";
 import React from "react";
 import type { z } from "zod";
+import { cn } from "@/lib";
 interface TextareaFieldProps<T extends z.ZodTypeAny>
   extends Omit<FormFieldProps, "field"> {
   field: TextareaFieldConfig<T>;
@@ -14,7 +15,7 @@ function TextareaFieldComponent<T extends z.ZodTypeAny>({
   form_id,
 }: TextareaFieldProps<T>) {
   return (
-    <>
+    <div className={cn(field.options?.classes?.wrapper)}>
       <Textarea
         {...controllerField}
         id={`${form_id}_${field.name}_textarea`}
@@ -22,9 +23,13 @@ function TextareaFieldComponent<T extends z.ZodTypeAny>({
         {...(field.placeholder && {
           placeholder: field.placeholder,
         })}
+        className={cn(field.options?.classes?.input)}
       />
-      <FieldError errors={[fieldState.error]} />
-    </>
+      <FieldError
+        className={cn(field.options?.classes?.error)}
+        errors={[fieldState.error]}
+      />
+    </div>
   );
 }
 TextareaFieldComponent.displayName = "TextareaField";

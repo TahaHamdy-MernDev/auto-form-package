@@ -56,7 +56,10 @@ function NormalFieldComponent<T extends z.ZodTypeAny>({
           </InputGroupAddon>
         )}
       </InputGroup>
-      <FieldError errors={[fieldState.error]} />
+      <FieldError 
+        className={cn(classes.error)} 
+        errors={[fieldState.error]} 
+      />
     </FieldContent>
   );
 }

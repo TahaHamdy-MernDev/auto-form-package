@@ -27,9 +27,6 @@ const MemoizedLabel = memo(
   )
 );
 
-// Memoized Checkbox component
-const MemoizedCheckbox = memo(Checkbox);
-
 function CheckboxFieldComponent<T extends z.ZodTypeAny>({
   controllerField,
   fieldState,
@@ -57,15 +54,16 @@ function CheckboxFieldComponent<T extends z.ZodTypeAny>({
       ),
       input: field.options?.classes?.input,
       label: cn("text-sm font-medium", field.options?.classes?.label),
+      error: field.options?.classes?.error,
     }),
     [field.options?.classes]
   );
 
   return (
     <div className={classes.wrapper}>
-      <MemoizedCheckbox
+      <Checkbox
         id={id}
-        checked={controllerField.value.toString()}
+        checked={controllerField.value}
         onCheckedChange={controllerField.onChange}
         disabled={field.options?.disabled}
         className={cn("h-4 w-4", classes.input)}
@@ -73,7 +71,9 @@ function CheckboxFieldComponent<T extends z.ZodTypeAny>({
       <MemoizedLabel htmlFor={id} className={classes.label}>
         {label}
       </MemoizedLabel>
-      {errorMessage && <FieldError>{errorMessage}</FieldError>}
+      {errorMessage && (
+        <FieldError className={cn(classes.error)}>{errorMessage}</FieldError>
+      )}
     </div>
   );
 }
