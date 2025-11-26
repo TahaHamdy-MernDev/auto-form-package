@@ -72,7 +72,15 @@ export function AutoForm<T extends z.ZodObject<any>>({
                   render={({ field: controllerField, fieldState }) => {
                     return (
                       <Field data-invalid={fieldState.invalid}>
-                        {field.label && <FieldLabel>{field.label}</FieldLabel>}
+                        {field.label && (
+                          <FieldLabel
+                            className={cn(
+                              field.options?.classes?.label
+                            )}
+                          >
+                            {field.label}
+                          </FieldLabel>
+                        )}
                         {RenderField({
                           field,
                           controllerField,

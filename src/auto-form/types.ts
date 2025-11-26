@@ -197,20 +197,6 @@ export interface FilesFieldConfig<T extends z.ZodTypeAny>
 export interface RichTextFieldConfig<T extends z.ZodTypeAny>
   extends BaseFieldConfig<T> {
   field_type: "rich_text";
-
-  options?: {
-    toolbar?: boolean;
-    placeholder?: string;
-    minHeight?: string;
-    maxHeight?: string;
-    editable?: boolean;
-
-    classes?: {
-      wrapper?: string;
-      editor?: string;
-      toolbar?: string;
-    };
-  };
 }
 
 export type FieldConfig<T extends z.ZodTypeAny = z.ZodObject<any>> =
