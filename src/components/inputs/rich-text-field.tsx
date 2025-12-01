@@ -1,4 +1,4 @@
-import type { FormFieldProps, RichTextFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, RichTextFieldConfig } from "@/types";
 import type { z } from "zod";
 import { SimpleEditor } from "@/components/tiptap-templates/simple/simple-editor";
 import React from "react";

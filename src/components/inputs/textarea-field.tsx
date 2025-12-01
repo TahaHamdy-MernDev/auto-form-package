@@ -1,5 +1,5 @@
 import { Textarea } from "@/components/ui/textarea";
-import type { FormFieldProps, TextareaFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, TextareaFieldConfig } from "@/types";
 import { FieldError } from "@/components/ui/field";
 import React from "react";
 import type { z } from "zod";

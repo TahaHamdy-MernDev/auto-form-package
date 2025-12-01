@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from "react";
-import type { CheckboxFieldConfig, FormFieldProps } from "@/auto-form/types";
+import type { CheckboxFieldConfig, FormFieldProps } from "@/types";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { FieldError } from "@/components/ui/field";

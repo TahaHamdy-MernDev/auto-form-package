@@ -8,7 +8,7 @@ import {
   InputGroupAddon,
 } from "@/components/ui/input-group";
 import { FieldContent, FieldError } from "@/components/ui/field";
-import type { FormFieldProps, LocalizedFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, LocalizedFieldConfig } from "@/types";
 import type { z } from "zod";
 
 interface LocalizedFieldProps<T extends z.ZodTypeAny>

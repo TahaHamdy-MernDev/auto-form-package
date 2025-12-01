@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { FormFieldProps, PasswordFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, PasswordFieldConfig } from "@/types";
 import {
   InputGroup,
   InputGroupAddon,

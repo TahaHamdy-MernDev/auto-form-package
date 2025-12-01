@@ -1,5 +1,5 @@
 import React from "react";
-import type { FormFieldProps, MultiSelectFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, MultiSelectFieldConfig } from "@/types";
 import { cn } from "@/lib/utils";
 import { FieldError } from "@/components/ui/field";
 import { Checkbox } from "@/components/ui/checkbox";

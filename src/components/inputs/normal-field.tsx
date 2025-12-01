@@ -5,7 +5,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import type { FormFieldProps, TextFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, TextFieldConfig } from "@/types";
 import type { z } from "zod";
 import { cn } from "@/lib/utils";
 interface NormalFieldProps<T extends z.ZodTypeAny>
@@ -56,10 +56,7 @@ function NormalFieldComponent<T extends z.ZodTypeAny>({
           </InputGroupAddon>
         )}
       </InputGroup>
-      <FieldError 
-        className={cn(classes.error)} 
-        errors={[fieldState.error]} 
-      />
+      <FieldError className={cn(classes.error)} errors={[fieldState.error]} />
     </FieldContent>
   );
 }

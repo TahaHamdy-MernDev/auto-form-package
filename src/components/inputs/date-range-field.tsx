@@ -1,4 +1,4 @@
-import { FormFieldProps, RangeDateFieldConfig } from "@/auto-form/types";
+import { FormFieldProps, RangeDateFieldConfig } from "@/types";
 import React from "react";
 const Calendar = React.lazy(() => import("@/components/ui/calendar"));
 import type { DateRange, Locale } from "react-day-picker";

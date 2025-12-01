@@ -1,4 +1,4 @@
-import { FormFieldProps } from "@/auto-form/types";
+import { FormFieldProps } from "@/types";
 import { FIELD_COMPONENTS } from "./field-registry";
 import { ComponentType } from "react";
 
@@ -7,4 +7,4 @@ export function RenderField(props: FormFieldProps) {
     props.field.field_type
   ] as ComponentType<any>;
   return <Component {...props} field={props.field} />;
-};
+}

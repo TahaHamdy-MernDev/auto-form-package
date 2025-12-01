@@ -9,7 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Field, FieldLabel } from "@/components/ui/field";
-import type { AutoFormProps, FieldConfig } from "./types";
+import type { AutoFormProps, FieldConfig } from "../types";
 import { cn, setServerErrors, RenderField } from "@/lib";
 
 export function AutoForm<T extends z.ZodObject<any>>({
@@ -20,9 +20,11 @@ export function AutoForm<T extends z.ZodObject<any>>({
   form_id,
   className,
   buttons,
+  mode,
+  is_dev,
 }: AutoFormProps<T>) {
   const form = useForm<z.infer<T>>({
-    mode: "onSubmit",
+    mode: mode || "onSubmit",
     resolver: zodResolver(schema) as Resolver<z.infer<T>>,
     defaultValues,
   });
@@ -48,8 +50,9 @@ export function AutoForm<T extends z.ZodObject<any>>({
       }
     }
   }
-  //log form errors
-  console.log(form.formState.errors);
+  if (is_dev) {
+    console.log("form errors", form.formState.errors);
+  }
   return (
     <FormProvider {...form}>
       <form
@@ -74,9 +77,7 @@ export function AutoForm<T extends z.ZodObject<any>>({
                       <Field data-invalid={fieldState.invalid}>
                         {field.label && (
                           <FieldLabel
-                            className={cn(
-                              field.options?.classes?.label
-                            )}
+                            className={cn(field.options?.classes?.label)}
                           >
                             {field.label}
                           </FieldLabel>

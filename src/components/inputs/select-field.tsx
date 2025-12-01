@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import type { FormFieldProps, SelectFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, SelectFieldConfig } from "@/types";
 import type { z } from "zod";
 
 interface SelectFieldProps<T extends z.ZodTypeAny>
@@ -21,7 +21,6 @@ const SelectFieldComponent = React.forwardRef<
   const { ref: _, ...controllerRest } = controllerField as any;
 
   return (
-    
     <Select
       {...controllerRest}
       onValueChange={controllerField.onChange}

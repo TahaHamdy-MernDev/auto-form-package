@@ -1,8 +1,5 @@
 import { PhoneField as PhoneFieldComponent } from "@/components/ui/phone-input";
-import type {
-  FormFieldProps,
-  InternationalFieldConfig,
-} from "@/auto-form/types";
+import type { FormFieldProps, InternationalFieldConfig } from "@/types";
 import { FieldError } from "@/components/ui/field";
 import type { Country } from "react-phone-number-input";
 import * as React from "react";

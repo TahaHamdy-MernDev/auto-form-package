@@ -5,7 +5,7 @@ import type {
   FileFieldConfig,
   FilesFieldConfig,
   FormFieldProps,
-} from "@/auto-form/types";
+} from "@/types";
 import { FieldError } from "@/components/ui/field";
 import { cn } from "@/lib/utils";
 import {

@@ -217,6 +217,8 @@ export type FieldConfig<T extends z.ZodTypeAny = z.ZodObject<any>> =
 
 export interface AutoFormProps<T extends z.ZodObject<any>> {
   schema: T;
+  mode?: "onSubmit" | "onChange" | "onBlur" | "all" | "onTouched";
+  is_dev?: boolean;
   fields: FieldConfig<T>[];
   defaultValues?: DefaultValues<z.infer<T>>;
   onSubmit: (values: z.infer<T>) => Promise<void> | void;

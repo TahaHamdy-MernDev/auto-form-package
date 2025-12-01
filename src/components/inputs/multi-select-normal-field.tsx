@@ -1,4 +1,4 @@
-import type { FormFieldProps, MultiSelectFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, MultiSelectFieldConfig } from "@/types";
 import { FieldError } from "@/components/ui/field";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";

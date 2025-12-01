@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
         entry: path.resolve(__dirname, "src/index.ts"),
         name: "AutoForm",
         formats: ["es", "cjs"],
-        fileName: (f) => `auto-form.${f === "es" ? "es.js" : "cjs.js"}`,
+        fileName: (f) => `auto-form.${f}.js`,
       },
       sourcemap: false,
       minify: isProd ? "esbuild" : false,

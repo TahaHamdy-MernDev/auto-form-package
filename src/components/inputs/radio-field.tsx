@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import type { FormFieldProps, RadioFieldConfig } from "@/auto-form/types";
+import type { FormFieldProps, RadioFieldConfig } from "@/types";
 import { FieldError } from "@/components/ui/field";
 import { cn } from "@/lib/utils";
 import type { z } from "zod";

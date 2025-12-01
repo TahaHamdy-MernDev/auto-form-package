@@ -10,11 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Trash2, Plus } from "lucide-react";
 import { FieldLabel } from "@/components/ui/field";
 import { cn } from "@/lib/utils";
-import {
-  VariantFieldConfig,
-  FormFieldProps,
-  FieldConfig,
-} from "@/auto-form/types";
+import { VariantFieldConfig, FormFieldProps, FieldConfig } from "@/types";
 import type { z } from "zod";
 import { RenderField } from "@/lib";
 import React from "react";

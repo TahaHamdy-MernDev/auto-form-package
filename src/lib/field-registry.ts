@@ -1,5 +1,5 @@
 // field-registry.ts
-import { FieldConfig } from "@/auto-form/types";
+import { FieldConfig } from "@/types";
 import * as Inputs from "@/components/inputs";
 
 export const FIELD_COMPONENTS: Record<FieldConfig["field_type"], any> = {

@@ -1,5 +1,5 @@
 import React from "react";
-import type { FormFieldProps } from "@/auto-form/types";
+import type { FormFieldProps } from "@/types";
 import {
   Popover,
   PopoverContent,
@@ -19,7 +19,7 @@ import { FieldError } from "@/components/ui/field";
 import type { Locale } from "react-day-picker";
 import { Spinner } from "@/components/ui/spinner";
 import type { z } from "zod";
-import type { SingleDateFieldConfig } from "@/auto-form/types";
+import type { SingleDateFieldConfig } from "@/types";
 import { useDateField } from "@/hooks";
 interface SingleDateFieldProps<T extends z.ZodTypeAny>
   extends Omit<FormFieldProps, "field"> {
