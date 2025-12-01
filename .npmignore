@@ -1,5 +1,10 @@
 # Build files
 /dist
+src
+*.scss
+*.svg
+*.json
+*.map
 
 # Development files
 /src

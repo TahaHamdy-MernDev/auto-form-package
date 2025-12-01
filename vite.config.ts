@@ -4,31 +4,23 @@ import tailwindcss from "@tailwindcss/vite";
 import dts from "vite-plugin-dts";
 import { defineConfig } from "vite";
 import { visualizer } from "rollup-plugin-visualizer";
-import type { PluginOption } from "vite";
 
 export default defineConfig(({ mode }) => {
-  const plugins: PluginOption[] = [
-    react(),
-    tailwindcss(),
-    dts({
-      insertTypesEntry: true,
-      outDir: "dist",
-    }),
-  ];
-
-  if (mode === "analyze") {
-    plugins.push(
-      visualizer({
-        open: true,
-        filename: "bundle-analyzer-report.html",
-        gzipSize: true,
-        brotliSize: true,
-      }) as PluginOption
-    );
-  }
+  const isProd = mode === "production";
 
   return {
-    plugins,
+    plugins: [
+      react(),
+      tailwindcss(),
+      dts({
+        insertTypesEntry: true,
+        outDir: "dist",
+      }),
+      mode === "analyze" &&
+        visualizer({
+          open: true,
+        }),
+    ],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
@@ -39,11 +31,10 @@ export default defineConfig(({ mode }) => {
         entry: path.resolve(__dirname, "src/index.ts"),
         name: "AutoForm",
         formats: ["es", "cjs"],
-        fileName: (format) =>
-          `auto-form.${format === "es" ? "es.js" : "cjs.js"}`,
+        fileName: (f) => `auto-form.${f === "es" ? "es.js" : "cjs.js"}`,
       },
-      sourcemap: true,
-      minify: mode === "production" ? "esbuild" : false,
+      sourcemap: false,
+      minify: isProd ? "esbuild" : false,
       rollupOptions: {
         external: [
           "react",
@@ -55,20 +46,12 @@ export default defineConfig(({ mode }) => {
           "date-fns-tz",
           "react-day-picker",
           "react-phone-number-input",
-          "tailwindcss",
           /^@radix-ui\/.*/,
           /^@tiptap\/.*/,
           "class-variance-authority",
           "clsx",
           "tailwind-merge",
         ],
-        output: {
-          globals: {
-            react: "React",
-            "react-dom": "ReactDOM",
-            "react/jsx-runtime": "jsxRuntime",
-          },
-        },
       },
     },
   };
