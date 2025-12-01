@@ -17,9 +17,6 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run build",
-    "prepack": "npm run build",
     "analyze": "vite build --mode analyze"
   },
   "repository": {
