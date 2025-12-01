@@ -1,7 +1,7 @@
 // import { z } from "zod";
 // import { FieldConfig } from "./types";
-// import { AutoForm } from "./auto-form";
 // import { generateDefaultsFromZod } from "./lib";
+// import { AutoForm } from "./auto-form/form";
 
 // const schema = z.object({
 //   name: z.string().optional(),
@@ -154,18 +154,19 @@ function App() {
   // console.log("defaults", defaults);
 
   return (
-    <div>
-      <h1>AutoForm</h1>
-    </div>
-  );
-  // <div className="container mx-auto p-2 ">
-  //   <AutoForm
-  //     className="max-w-full mx-auto border-0 grid grid-cols-3 gap-2"
-  //     schema={schema}
-  //     fields={fields}
-  //     defaultValues={defaults}
-  //     onSubmit={(data) => console.log(data)}
-  //   />
-  // </div>
+      <div>
+        <h1>AutoForm</h1>
+      </div>
+    );
+    // <div className="container mx-auto p-2 ">
+    //   <AutoForm
+    //     className="max-w-full mx-auto border-0 grid grid-cols-3 gap-2"
+    //     schema={schema}
+    //     fields={fields}
+    //     defaultValues={defaults}
+    //     onSubmit={(data) => console.log(data)}
+    //   />
+    // </div>
+  // );
 }
 export default App;
